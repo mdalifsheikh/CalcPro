@@ -3,6 +3,11 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   testWidgets('calculator opens and evaluates a basic expression', (tester) async {
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
     await tester.pumpWidget(const CalcProApp());
 
     expect(find.text('CalcPro'), findsOneWidget);
