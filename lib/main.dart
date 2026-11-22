@@ -112,7 +112,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           .replaceAll('÷', '/')
           .replaceAll('−', '-')
           .replaceAll('%', '/100');
-      final parser = Parser();
+      final parser = ShuntingYardParser();
       final parsed = parser.parse(normalized);
       final value = parsed.evaluate(EvaluationType.REAL, ContextModel());
 
