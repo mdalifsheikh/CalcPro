@@ -89,12 +89,16 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         case 'tan':
         case 'log':
           _expression += '$key(';
+          break;
         case '√':
           _expression += 'sqrt(';
+          break;
         case 'x²':
           _expression += '^2';
+          break;
         default:
           _expression += key;
+          break;
       }
     });
   }
