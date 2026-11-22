@@ -120,7 +120,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         throw const FormatException('Result is not finite');
       }
 
-      _result = _formatResult(value);
+      _result = _formatResult(value.toDouble());
       _error = null;
     } catch (_) {
       _error = 'Invalid expression';
